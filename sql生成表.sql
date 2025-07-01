@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS game_db;
-create database game_db
+create database game_db;
+use game_db;
 
 CREATE TABLE `GameResults` (
   `Id` int NOT NULL AUTO_INCREMENT,
