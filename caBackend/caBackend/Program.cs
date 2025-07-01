@@ -54,7 +54,7 @@ app.MapPost("/Login", async (HttpContext context) =>
             response.isLoggedIn = true;
             response.isPaid = false;
         }
-        else if (request.username == "Jason Wong" && request.password == "1234")
+        else if (request.username == "JasonWong" && request.password == "1234")
         {
             response.isLoggedIn = true;
             response.isPaid = false;

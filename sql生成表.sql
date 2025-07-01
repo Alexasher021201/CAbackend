@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS game_db;
 create database game_db
 
 CREATE TABLE `GameResults` (

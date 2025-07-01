@@ -159,3 +159,4 @@ D:\.net\CAbackend\caBackend\caBackend\bin\Debug\net8.0\runtimes\browser\lib\net8
 D:\.net\CAbackend\caBackend\caBackend\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
 D:\.net\CAbackend\caBackend\caBackend\obj\Debug\net8.0\caBackend.csproj.AssemblyReference.cache
 D:\.net\CAbackend\caBackend\caBackend\obj\Debug\net8.0\caBackend.csproj.Up2Date
+D:\.net\CAbackend\caBackend\caBackend\obj\Debug\net8.0\caBackend.sourcelink.json
