@@ -44,27 +44,22 @@ app.MapPost("/Login", async (HttpContext context) =>
 
     if (request is not null)
     {
-        if (request.username == "admin" && request.password == "1234")
+        if (request.username == "Jason" && request.password == "Jason1234")
         {
             response.isLoggedIn = true;
             response.isPaid = true;
         }
-        else if (request.username == "user" && request.password == "1234")
+        else if (request.username == "Alex" && request.password == "Alex1234")
+        {
+            response.isLoggedIn = true;
+            response.isPaid = true;
+        }
+        else if (request.username == "Daimon" && request.password == "Daimon1234")
         {
             response.isLoggedIn = true;
             response.isPaid = false;
         }
-        else if (request.username == "JasonWong" && request.password == "1234")
-        {
-            response.isLoggedIn = true;
-            response.isPaid = false;
-        }
-        else if (request.username == "Jason" && request.password == "1234")
-        {
-            response.isLoggedIn = true;
-            response.isPaid = false;
-        }
-        else if (request.username == "Wong" && request.password == "1234")
+        else if (request.username == "Lewis" && request.password == "Lewis1234")
         {
             response.isLoggedIn = true;
             response.isPaid = false;
@@ -92,6 +87,7 @@ app.MapGet("/Ad", () =>
     return Results.Json(images);
 });
 
+//@params username, besttime
 app.MapPost("/SubmitResult", async (GameResult incomingResult, AppDbContext db) =>
 {
     var existing = await db.GameResults
@@ -99,7 +95,6 @@ app.MapPost("/SubmitResult", async (GameResult incomingResult, AppDbContext db) 
 
     if (existing != null)
     {
-        // 更新为更快时间
         if (incomingResult.BestTime < existing.BestTime)
         {
             existing.BestTime = incomingResult.BestTime;
@@ -108,19 +103,16 @@ app.MapPost("/SubmitResult", async (GameResult incomingResult, AppDbContext db) 
     }
     else
     {
-        // 添加新记录
         db.GameResults.Add(incomingResult);
         await db.SaveChangesAsync();
     }
-
-    // 获取前 5 名
+    
     var top5 = await db.GameResults
         .OrderBy(r => r.BestTime)
         .Take(5)
         .Select(r => new { r.Username, r.BestTime })
         .ToListAsync();
-
-    // 获取当前用户排名
+    
     var allSorted = await db.GameResults
         .OrderBy(r => r.BestTime)
         .ToListAsync();
