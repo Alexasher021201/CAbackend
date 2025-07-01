@@ -3604,19 +3604,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\13294\\.nuget\\packages\\": {}
+    "/Users/aintor/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.net\\CAbackend\\caBackend\\caBackend\\caBackend.csproj",
+      "projectUniqueName": "/Users/aintor/RiderProjects/CAbackend/caBackend/caBackend/caBackend.csproj",
       "projectName": "caBackend",
-      "projectPath": "D:\\.net\\CAbackend\\caBackend\\caBackend\\caBackend.csproj",
-      "packagesPath": "C:\\Users\\13294\\.nuget\\packages\\",
-      "outputPath": "D:\\.net\\CAbackend\\caBackend\\caBackend\\obj\\",
+      "projectPath": "/Users/aintor/RiderProjects/CAbackend/caBackend/caBackend/caBackend.csproj",
+      "packagesPath": "/Users/aintor/.nuget/packages/",
+      "outputPath": "/Users/aintor/RiderProjects/CAbackend/caBackend/caBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\13294\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/aintor/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3683,7 +3683,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.411/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/aintor/.dotnet/sdk/8.0.411/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
