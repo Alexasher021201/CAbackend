@@ -64,6 +64,11 @@ app.MapPost("/Login", async (HttpContext context) =>
             response.isLoggedIn = true;
             response.isPaid = false;
         }
+        else if (request.username == "Asher" && request.password == "Asher1234")
+        {
+            response.isLoggedIn = true;
+            response.isPaid = false;
+        }
     }
 
     return Results.Json(response);
@@ -88,7 +93,7 @@ app.MapGet("/Ad", () =>
 });
 
 //params: username/besttime
-app.MapPost("/SubmitResult", async (GameResult incomingResult, AppDbContext db) =>
+app.MapPost("/Leaderboard", async (GameResult incomingResult, AppDbContext db) =>
 {
     var existing = await db.GameResults
         .FirstOrDefaultAsync(r => r.Username == incomingResult.Username);
