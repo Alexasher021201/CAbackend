@@ -1,8 +1,26 @@
-先在本地MySQLworkbranch运行.sql文件  
-在appsettings.json中修改自己的数据库用户名以及密码  
-前端传入的排行榜json格式如下  
+## Prerequisites
+
+- MySQL Workbench is installed and running locally.
+- .NET 8 SDK and ASP.NET Core runtime are set up.
+
+---
+
+## Setup Instructions
+
+### 1. Initialize the Database
+
+Open MySQL Workbench and execute the provided `init.sql` file to create the necessary schema and seed the initial data.
+
+### 2. Configure Database Connection
+
+Open the `appsettings.json` file and update the following section with your MySQL username, password, and database name:
+
+```json
 {
-  "username": "Alice",
-  "bestTime": 11.23
+  "ConnectionStrings": {
+    "DefaultConnection": "server=localhost;user=your_username;password=your_password;database=game_db"
+  }
 }
+```
+
 
