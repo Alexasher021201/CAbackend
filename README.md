@@ -1,24 +1,26 @@
 ## Prerequisites
 
-- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) installed and running locally.
-- .NET 8 SDK and ASP.NET Core environment set up.
+- MySQL Workbench is installed and running locally.
+- .NET 8 SDK and ASP.NET Core runtime are set up.
 
 ---
 
 ## Setup Instructions
 
-1. **Initialize the Database**
+### 1. Initialize the Database
 
-   Open **MySQL Workbench**, and run the provided `.sql` file to create the required schema and tables.
+Open MySQL Workbench and execute the provided `init.sql` file to create the necessary schema and seed the initial data.
 
-2. **Configure Database Credentials**
+### 2. Configure Database Connection
 
-   Open the `appsettings.json` file and update the following fields with your own MySQL username and password:
+Open the `appsettings.json` file and update the following section with your MySQL username, password, and database name:
 
-   ```json
-   {
-   "username": "Alice",
-   "bestTime": 99
-   }
-   ```
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "server=localhost;user=your_username;password=your_password;database=game_db"
+  }
+}
+```
+
 
