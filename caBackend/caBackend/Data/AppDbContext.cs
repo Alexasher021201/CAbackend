@@ -6,4 +6,5 @@ public class AppDbContext : DbContext
         : base(options) { }
 
     public DbSet<GameResult> GameResults { get; set; }
+    public DbSet<User> Users { get; set; } // 添加这一行
 }

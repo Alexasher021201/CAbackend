@@ -33,46 +33,28 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapPost("/Login", async (HttpContext context) =>
+
+app.MapPost("/Login", async (LoginRequest request, AppDbContext db) =>
 {
-    var request = await context.Request.ReadFromJsonAsync<LoginRequest>();
-    var response = new LoginResponse
+    var user = await db.Users.FirstOrDefaultAsync(u =>
+        u.Username == request.username && u.Password == request.password);
+
+    if (user != null)
+    {
+        return Results.Json(new LoginResponse
+        {
+            isLoggedIn = true,
+            isPaid = user.IsPaid
+        });
+    }
+
+    return Results.Json(new LoginResponse
     {
         isLoggedIn = false,
         isPaid = false
-    };
-
-    if (request is not null)
-    {
-        if (request.username == "Jason" && request.password == "Jason1234")
-        {
-            response.isLoggedIn = true;
-            response.isPaid = true;
-        }
-        else if (request.username == "Alex" && request.password == "Alex1234")
-        {
-            response.isLoggedIn = true;
-            response.isPaid = true;
-        }
-        else if (request.username == "Daimon" && request.password == "Daimon1234")
-        {
-            response.isLoggedIn = true;
-            response.isPaid = false;
-        }
-        else if (request.username == "Lewis" && request.password == "Lewis1234")
-        {
-            response.isLoggedIn = true;
-            response.isPaid = false;
-        }
-        else if (request.username == "Asher" && request.password == "Asher1234")
-        {
-            response.isLoggedIn = true;
-            response.isPaid = false;
-        }
-    }
-
-    return Results.Json(response);
+    });
 });
+
 
 app.MapGet("/Ad", () =>
 {
